@@ -99,14 +99,11 @@ def sell_pet_to_customer(pet_shop, name, customer):
       # Add sold to the admin list
       pet_shop["admin"]["pets_sold"] += 1
 
-      # Find the cost of the pet that has been selected 
-      pet_cost = name["price"]
-
       # Add the cost to the total admin cash 
-      pet_shop["admin"]["total_cash"] += pet_cost
+      pet_shop["admin"]["total_cash"] += name["price"]
 
       # Take it away from the customers cash 
-      customer["cash"] -= pet_cost
+      customer["cash"] -= name["price"]
     else:
       return "You can't but this"
 
